@@ -8,6 +8,7 @@
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   </head>
   <body>
+    <!-- Navbar - menu -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-margin">
         <a class="navbar-brand" href="{{ url_for ('home') }}">Comflat</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
@@ -27,29 +28,34 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ url_for ('trojmiasto') }}">Trójmiasto </a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for ('liczba_ogloszen') }}">Liczba ogłoszeń </a>
+                </li>
             </ul>
         </div>
     </nav>
       <h1>Ceny mieszkań w dzielnicach Gdyni</h1>
       <div id="example-graph"></div>
-
+      <!-- Form -->
       <form method="post" action="{{ url_for('gdynia') }}">
           <div class="form-group">
-              <label for="liczba_pokoi">Liczba pokoi:</label>
+              <label for="liczba_pokoi">Liczba pokoi:</label></br>
+              <label for="liczba_pokoi">Od:</label>
               <input type="number" class="form-control" id="liczba_pokoi" name="liczba_pokoi" value="Podaj wartość">
+              <label for="liczba_pokoi">Do:</label>
+              <input type="number" class="form-control" id="liczba_pokoi1" name="liczba_pokoi1" value="Podaj wartość">
           </div>
           <div class="form-group">
-            <label for="powierzchnia">Powierzchnia mieszkania:</label>
+            <label for="powierzchnia">Powierzchnia mieszkania (Od):</label>
             <input type="number" class="form-control" id="powierzchnia" name="powierzchnia" value="Podaj wartość">
           </div>
           <button type="submit" class="btn btn-primary">Aktualizuj wykres</button>
       </form>
 
       <script>
-        // Dane do wykresu
         var data = {{ data|tojson }};
         
-        // Tworzenie wykresu
+        // Create a chart
         Plotly.newPlot('example-graph', [
            {
                x: data.map(function(row) { return row.Lokalizacja; }),
@@ -60,9 +66,11 @@
         ],
         {
            title: 'Średnia cena za M2 mieszkań w dzielnicach Gdyni'
+           
         });
      </script>
   </body>
+  <!--CSS-->
   <style>
     body {
     background-color: #212121;

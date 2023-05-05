@@ -8,6 +8,7 @@
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   </head>
   <body>
+    <!-- Navbar - menu -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-margin">
         <a class="navbar-brand" href="{{ url_for ('home') }}">Comflat</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
@@ -22,22 +23,24 @@
                     <a class="nav-link" href="{{ url_for ('sopot') }}">Sopot </a>
                 </li>
                 <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for ('gdynia') }}">Gdynia </a>
+                <li class="nav-item active">
                     <a class="nav-link" href="{{ url_for ('gdansk') }}">Gdańsk </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url_for ('trojmiasto') }}">Trójmiasto </a>
+                    <a class="nav-link" href="{{ url_for ('liczba_ogloszen') }}">Liczba ogłoszeń </a>
                 </li>
             </ul>
         </div>
     </nav>
-      <h1>Średnia cena za M2 wszystkich mieszkań w poszczególnych miastach trójmiasta </h1>
+      <h1>Średnia cena za M2 wszystkich mieszkań w trójmieście </h1>
       <div id="example-graph"></div>
 
       <script>
-        // Dane do wykresu
+        
         var data = {{ data|tojson }};
         
-        // Tworzenie wykresu
+        // Create a chart
         Plotly.newPlot('example-graph', [
            {
                values: data.map(function(row) { return row.SredniaCenaZaM2; }),
@@ -51,6 +54,7 @@
         });
      </script>
   </body>
+  <!--CSS-->
   <style>
     body {
     background-color: #212121;

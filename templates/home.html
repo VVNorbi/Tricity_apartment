@@ -1,11 +1,13 @@
+<!--the template inherits from the base.html template -->
 {% extends 'base.html' %}
 {%block title%}
   Comflat - porówywarka trójmiasto
 {%endblock%}
-
+<!--We define a block that will be inserted
+   in place of the content block defined in the base template. In this case, we include
+    a simple phrase describing the "Comflat" application, and its features.-->
 {%block content%}
 <div style="font-family: Arial, sans-serif;margin-top:20px;text-align:center">
-  Comflat jest to aplikacja pozwalająca na porównanie cen mieszkań w trójmieście.<br/>
-  Oprócz tego mamy mozliwość porównania cen w dzielnicach danego miasta z podanymi wytycznymi takimi jak liczba pokoi czy maksymalny rozmiar mieszkania.
+  Comflat is an application that allows for comparing prices of flats in the Tricity. <br/> Additionally, we have the ability to compare prices in districts of a given city with specified guidelines such as the number of rooms or minimum apartment size.
 </div>
 {%endblock%}
