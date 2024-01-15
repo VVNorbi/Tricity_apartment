@@ -35,19 +35,19 @@ Oprócz tego mamy mozliwość porównania cen w dzielnicach danego miasta z poda
 ## Zrzuty Ekranu
 
 **Strona główna**
-![Strona główna](screenshots/1.png)
+![Strona główna](screenshots/1.PNG)
 
 **Sopot**
-![Sopot](screenshots/2.png)
+![Sopot](screenshots/2.PNG)
 
 **Gdańsk**
-![Gdańsk](screenshots/4.png)
+![Gdańsk](screenshots/4.PNG)
 
 **Gdynia**
-![Gynia](screenshots/3.png)
+![Gynia](screenshots/3.PNG)
 
 **Trójmiasto**
-![Trójmiasto](screenshots/5.png)
+![Trójmiasto](screenshots/5.PNG)
 
  
 ## Instalacja
